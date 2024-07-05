@@ -52,7 +52,7 @@ const Signup = () => {
     };
   
     return (
-      <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+      <div className="min-h-screen flex flex-col justify-center py-9 sm:px-6 lg:px-8"
       style={{
         backgroundImage: `url(${backgroundImagesg})`,
         backgroundSize: 'cover',
@@ -60,12 +60,12 @@ const Signup = () => {
       }}
       >
         <div className="w-full sm:mx-auto sm:w-full sm:max-w-full">
-          <h2 className="mt-6 text-center text-6xl font-extrabold text-green-100 font-Caveat shadow-amber-600/50 text-shadow-lg">
+          <h2 className="mt-3 text-center text-6xl font-extrabold text-white font-Caveat shadow-amber-600/50 text-shadow-lg">
             Welcome To Far-Market!
           </h2>
         </div>
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <div className="bg-white bg-opacity-85 py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center">
                 <span className="inline-block h-24 w-24 rounded-full overflow-hidden">
@@ -98,7 +98,7 @@ const Signup = () => {
               <div>
                 <label
                   htmlFor="username"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-base font-medium text-slate-900"
                 >
                   Username
                 </label>
@@ -110,7 +110,7 @@ const Signup = () => {
                     required
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-lime-600 focus:border-lime-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -118,7 +118,7 @@ const Signup = () => {
               <div>
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-base font-medium text-slate-900"
                 >
                   Full Name
                 </label>
@@ -130,7 +130,7 @@ const Signup = () => {
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-lime-600 focus:border-lime-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -138,7 +138,7 @@ const Signup = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-base font-medium text-slate-900"
                 >
                   Email address
                 </label>
@@ -150,7 +150,7 @@ const Signup = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-lime-600 focus:border-lime-600 sm:text-sm"
                   />
                 </div>
               </div>
@@ -170,7 +170,7 @@ const Signup = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-lime-600 focus:border-lime-600 sm:text-sm"
                   />
                   {visible ? (
                     <AiOutlineEye
@@ -203,7 +203,7 @@ const Signup = () => {
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-lime-600 focus:border-lime-600 sm:text-sm"
                   />
                   {visible ? (
                     <AiOutlineEye
@@ -224,14 +224,14 @@ const Signup = () => {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                  className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-700 hover:bg-lime-600"
                 >
-                  Submit
+                  Register
                 </button>
               </div>
               <div className={`${styles.normalFlex} w-full`}>
                 <h4>Already have an account?</h4>
-                <Link to="/login" className="text-blue-600 pl-2">Login
+                <Link to="/login" className="font-medium text-lime-800 hover:text-lime-700 hover:text-shadow-lg shadow-lime-500 pl-2">Login
                 </Link>
               </div>
             </form>
