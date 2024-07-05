@@ -60,7 +60,7 @@ const Signup = () => {
       }}
       >
         <div className="w-full sm:mx-auto sm:w-full sm:max-w-full">
-          <h2 className="mt-3 text-center text-6xl font-extrabold text-white font-Caveat shadow-amber-600/50 text-shadow-lg">
+          <h2 className="mt-3 text-center text-6xl font-extrabold text-gray-900 font-Caveat shadow-slate-100/90 text-shadow-lg">
             Welcome To Far-Market!
           </h2>
         </div>
