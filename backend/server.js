@@ -1,5 +1,5 @@
 const app = require("./app");
-const connectDatbase = require("./db/Database");
+const connectDatbase = require("./dbdatabase");
 
 
 // handling uncaught exception
