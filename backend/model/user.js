@@ -3,9 +3,13 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
+  username:{
+    type: String,
+    required: [true, "Please enter your Username!"],
+  },
   name:{
     type: String,
-    required: [true, "Please enter your name!"],
+    required: [true, "Please enter your Full name!"]
   },
   email:{
     type: String,
