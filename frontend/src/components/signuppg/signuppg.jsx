@@ -4,7 +4,7 @@ import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import backgroundImagesg from './backgroundsg.jpeg';
-//import axios from "axios";
+import axios from "axios";
 //import { server } from "../../server";
 
 const Signup = () => {
@@ -17,27 +17,28 @@ const Signup = () => {
     const [avatar, setAvatar] = useState(null);
   
     const handleFileInputChange = (e) => {
-      const reader = new FileReader();
-  
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setAvatar(reader.result);
-        }
-      };
-  
-      reader.readAsDataURL(e.target.files[0]);
+      const file = e.target.files[0];
+      setAvatar(file);
     };
   
     const handleSubmit = async (e) => {
       e.preventDefault();
+      const config = {headers: {"Content-Type":"multipart/form-data"}};
+
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
-        return;
-      }
+        return;}
+      const newform = new FormData();
+      newform.append("file", avatar);
+      newform.append("username", username);
+      newform.append("name", fullName);
+      newform.append("password", password);      
+      
   
-      //axios
-        //.post(`${server}/user/create-user`, { username, fullName, email, password, avatar })
-        //.then((res) => {
+      axios
+        .post(`${server}/user/create-user`, newform, config)
+        .then((res) => {
+          console.log(err);
           //toast.success(res.data.message);
           //setUsername("");
           //setFullName("");
@@ -45,7 +46,7 @@ const Signup = () => {
           //setPassword("");
           //setConfirmPassword("");
           //setAvatar();
-        //})
+        });
         //.catch((error) => {
           //toast.error(error.response.data.message);
         //});
@@ -71,7 +72,7 @@ const Signup = () => {
                 <span className="inline-block h-24 w-24 rounded-full overflow-hidden">
                   {avatar ? (
                     <img
-                      src={avatar}
+                      src={URL.createObjectURL(avatar)}
                       alt="avatar"
                       className="h-full w-full object-cover rounded-full"
                     />
@@ -83,7 +84,7 @@ const Signup = () => {
                   htmlFor="file-input"
                   className="mt-4 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
                 >
-                  <span>Upload a file</span>
+                  <span>Upload your Pic</span>
                   <input
                     type="file"
                     name="avatar"

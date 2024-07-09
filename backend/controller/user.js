@@ -3,7 +3,7 @@ const path = require("path");
 const router = express.Router();
 const {upload} = require("../multer");
 
-router.post("/create-user", upload.singe("file"), async (req, res, next)=> {
+router.post("/create-user", upload.single("file"), async (req, res, next)=> {
     const {avatar, username, name, email, password} = req.body;
     const userEmail = await User.findOne({ email });
 
@@ -22,3 +22,5 @@ const user = {
 };
 console.log(user);
 })
+
+module.exports = router;
