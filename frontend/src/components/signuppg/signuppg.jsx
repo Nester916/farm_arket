@@ -32,7 +32,7 @@ const Signup = () => {
     const newform = new FormData();
     newform.append("file", avatar);
     newform.append("username", username);
-    newform.append("name", fullname);
+    newform.append("fullname", fullname);
     newform.append("password", password);
     
 
