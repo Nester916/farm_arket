@@ -40,6 +40,9 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     success: true,
     newUser,
   });
+  } catch(error){
+    return next(new ErrorHandler(error.message), 400);
+  }
 });
 
 module.exports = router;
