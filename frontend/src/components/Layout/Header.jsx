@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../../styles/styles";
 import { productData} from "../../staticdata";
 import {AioutlineSearch} from "react-icons/ai";
-
+import {ToIosArrowforward} from "react-icons?io";
 
 
 const Header = () => {
@@ -53,6 +53,14 @@ const Header = () => {
                             })};
                         </div> 
                 ) :null}
+            </div>
+            
+            <div classname={"${styles.button}"}>
+                <link to="/seller">
+                <h1 className='text-[#fff] flex items-center'>
+                    Become Seller <ToIosArrowforward className="ml-1"/>
+                </h1>
+                </link>
             </div>
         </div>
       </div>
