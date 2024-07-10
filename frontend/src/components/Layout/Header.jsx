@@ -4,11 +4,13 @@ import styles from "../../styles/styles";
 import { productData} from "../../staticdata";
 import {AioutlineSearch} from "react-icons/ai";
 import {ToIosArrowforward} from "react-icons?io";
+import {BiMenuAltLeft} from "react-icons/bi";
 
 
 const Header = () => {
     const [searchTerm,setSearchTerm] = useState("");
     const [searchdata,setSearchData] = useState(null);
+    const [active,setActive] = useState(false)
 
     const handleSearchChange = (e) =>{
         const term = e.target.value;
@@ -21,6 +23,14 @@ const Header = () => {
         );
       setSearchData(filteredProducts);
     };
+
+    window.addEventListener("scroll",()=> {
+        if (window.screenY>70){
+            setActive(true);
+        } else{
+            setActive(false)
+        }
+    })
     return (
       <div className={"${styles.section}"}>
         <div className='hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between'>
@@ -62,6 +72,18 @@ const Header = () => {
                 </h1>
                 </link>
             </div>
+        </div>
+        <div className={"${active === true ? 'shadow-sm fixed top-0 left-0 z-10' : null} transition hidden 800px:flex items-center justify-between bg-{#3321c8} h-[70px]"}>
+        </div>
+        <div className={"${styles.section} relative ${style.normalFlex} justify-between"}>
+            {/* categories */}
+            <div>
+                <div className='relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block'>
+                    <BiMenuAltLeft size = {30} className="absolute top-3 left-2"/>
+
+                </div>
+            </div>
+
         </div>
       </div>
     );
