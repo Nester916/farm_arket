@@ -5,12 +5,14 @@ import { productData} from "../../staticdata";
 import {AioutlineSearch} from "react-icons/ai";
 import {ToIosArrowforward} from "react-icons?io";
 import {BiMenuAltLeft} from "react-icons/bi";
-
+import DropDown from "./DropDown"
 
 const Header = () => {
     const [searchTerm,setSearchTerm] = useState("");
     const [searchdata,setSearchData] = useState(null);
-    const [active,setActive] = useState(false)
+    const [active,setActive] = useState(false);
+    const [dropDown,setDropDown] = useState(false);
+
 
     const handleSearchChange = (e) =>{
         const term = e.target.value;
@@ -80,6 +82,22 @@ const Header = () => {
             <div>
                 <div className='relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block'>
                     <BiMenuAltLeft size = {30} className="absolute top-3 left-2"/>
+                    <button
+                    className={"h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sanstext-lg font-[500] select-none rounded-t-md"}>
+                        All Categories 
+                    </button>
+                    <IoIosArrowdown
+                    size = {20}
+                    className = "absolute right-2 top-4 cursor-pointer"
+                    onClick={() => setDropDown(!dropDown)}/>
+                    {
+                        dropDown ? (
+                            <dropDown
+                            categoriesData = {categoriesData}
+                            setDropDown = {setDropDown}
+                            />
+                        ) : null
+                    }
 
                 </div>
             </div>
