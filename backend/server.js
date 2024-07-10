@@ -1,5 +1,5 @@
 const app = require("./app");
-const connectDatbase = require("./db/Database");
+const connectDatbase = require("./dbdatabase");
 
 
 // handling uncaught exception
@@ -30,3 +30,4 @@ process.on("unhandledRejection", (err) =>{
         process.exit(1);
     });
 });
+}
