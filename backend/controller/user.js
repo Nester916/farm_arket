@@ -22,18 +22,18 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
           res.json({message: "File deleted successfully"});
         }
       });
-      return next(new ErrorHandler("User already exists", 400))
+      return next(new ErrorHandler("User already exists", 400));
   }
 
   const filename = req.file.filename;
   const fileUrl = path.join(filename);
 
   const user = {
-    avatar: fileUrl,
     username: username,
     fullname: fullname,
     email: email,
     password: password,
+    avatar: fileUrl,
   };
   const newUser = await User.create(user);
   res.status(201).json({

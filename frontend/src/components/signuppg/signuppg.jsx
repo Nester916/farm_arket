@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import backgroundImagesg from "./backgroundsg.jpeg";
 import axios from "axios";
@@ -15,6 +15,7 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
+  const navigate = useNavigate();
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
@@ -33,13 +34,15 @@ const Signup = () => {
     newform.append("file", avatar);
     newform.append("username", username);
     newform.append("fullname", fullname);
+    newform.append("email", email);
     newform.append("password", password);
-    
 
     axios
       .post(`${server}/user/create-user`, newform, config)
       .then((res) => {
-        console.log(res);
+        if (res.data.success === true) {
+          navigate("/");
+        }
       })
       .catch((err) => {
         console.log(err);
