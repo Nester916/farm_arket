@@ -5,6 +5,8 @@ const router = express.Router();
 const { upload } = require("../multer");
 const ErrorHandler = require("../utils/errorhandler");
 const fs = require("fs");
+const jwt = require("jsonwebtoken");
+const sendMail = require("../utils/sendmail");
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
   try {
@@ -35,14 +37,33 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       password: password,
       avatar: fileUrl,
     };
-    const newUser = await User.create(user);
-    res.status(201).json({
-      success: true,
-      newUser,
-    });
+    const activationToken = createActivationToken(user);
+
+    const ativationUrl = `http://localhost:3000/activation/${activationToken}`;
+    try{
+      await sendMail({
+        email: user.email,
+        subject: "Verify your Account",
+        message: `Hello ${user.fullname}. Click here to verify your account: ${activationUrl}`,
+      })
+      res.status(201).json({
+        success: true,
+        message: `Check your mail at ${user.email} to verify your account.`
+      })
+
+    } catch(error){
+      return next(error.message, 500)
+    }
   } catch (error) {
-    return next(new ErrorHandler(error.message), 400);
+    return next(new ErrorHandler(error.message, 400));
   }
 });
+
+const createActivationToken = (user) =>{
+return jwt.sign(user, process.env.ACTIVATION_SECRET,{
+  expiresIn: "5m",
+})
+}
+
 
 module.exports = router;
