@@ -7,6 +7,7 @@ const ErrorHandler = require("../utils/errorhandler");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendmail");
+const catchAsycErrors = require("../middleware/catchAsyncerrors");
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
   try {
@@ -40,30 +41,57 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     const activationToken = createActivationToken(user);
 
     const ativationUrl = `http://localhost:3000/activation/${activationToken}`;
-    try{
+    try {
       await sendMail({
         email: user.email,
         subject: "Verify your Account",
         message: `Hello ${user.fullname}. Click here to verify your account: ${activationUrl}`,
-      })
+      });
       res.status(201).json({
         success: true,
-        message: `Check your mail at ${user.email} to verify your account.`
-      })
-
-    } catch(error){
-      return next(error.message, 500)
+        message: `Check your mail at ${user.email} to verify your account.`,
+      });
+    } catch (error) {
+      return next(error.message, 500);
     }
   } catch (error) {
     return next(new ErrorHandler(error.message, 400));
   }
 });
 
-const createActivationToken = (user) =>{
-return jwt.sign(user, process.env.ACTIVATION_SECRET,{
-  expiresIn: "5m",
-})
-}
+const createActivationToken = (user) => {
+  return jwt.sign(user, process.env.ACTIVATION_SECRET, {
+    expiresIn: "5m",
+  });
+};
 
+router.post(
+  "/activation",
+  catchAsycErrors(async (req, res, next) => {
+    try {
+      if (!newUser) {
+        return next(new ErrorHandler("Invalid token", 400));
+      }
+      const { username, fullname, email, password, avatar } = newUser;
+
+      let user = await User.findOne({ email });
+
+      if (user) {
+        return next(new ErrorHandler("User already exists", 400));
+      }
+      user = await User.create({
+        username,
+        fullname,
+        email,
+        avatar,
+        password,
+      });
+
+      sendToken(user, 201, res);
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
+  })
+);
 
 module.exports = router;
