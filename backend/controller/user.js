@@ -7,6 +7,8 @@ const ErrorHandler = require("../utils/errorhandler");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendmail");
+const catchAsyncErrors = require("../middleware/catchasyncerrors");
+const sendToken = require("../utils/jwttoken");
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
   try {
@@ -47,7 +49,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
         email: user.email,
         subject: "Verify your Account",
         message: `Hello ${user.fullname}! Click on the link to verify your account: ${activationUrl}`,
-      })
+      });
       res.status(201).json({
         success: true,
         message: `Please check you Email, ${user.email} to verify your account.`,
@@ -65,5 +67,29 @@ const createActivationToken = (user) => {
     expiresIn: "5m",
   });
 };
+
+router.post(
+  "/activation",
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const newUser = jwt.verify(
+        activation_token,
+        process.env.ACTIVATION_SECRET
+      );
+      if (!newUser) {
+        return next(new ErrorHandler("Invalid token", 400));
+      }
+      const { username, fullname, email, password, avatar } = newUser;
+
+      User.create({
+        username,
+        email,
+        avatar,
+        password,
+      });
+      sendToken(newUser, 201, res);
+    } catch (error) {}
+  })
+);
 
 module.exports = router;
