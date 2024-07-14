@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Login,
   Signup,
+  Activation,
 } from "./Routes.js";
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
     <Routes>
       <Route path='/login' element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/activation/:activation_token" element={<Activation />} />
     </Routes>
     </BrowserRouter>
   )
