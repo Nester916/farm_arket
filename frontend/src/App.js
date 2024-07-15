@@ -6,6 +6,9 @@ import {
   Signup,
   Activation,
 } from "./Routes.js";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   return (
     <BrowserRouter>

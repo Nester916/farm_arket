@@ -40,22 +40,18 @@ const Signup = () => {
     axios
       .post(`${server}/user/create-user`, newform, config)
       .then((res) => {
-          alert(res.message);
+        toast.success(res.data.message);
+        setAvatar();
+        setUsername("");
+        setFullName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        toast.error(error.response.data.message);
       });
-    //toast.success(res.data.message);
-    //setUsername("");
-    //setFullName("");
-    //setEmail("");
-    //setPassword("");
-    //setConfirmPassword("");
-    //setAvatar();
   };
-  //.catch((error) => {
-  //toast.error(error.response.data.message);
-  //});
 
   return (
     <div
