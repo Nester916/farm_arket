@@ -6,6 +6,7 @@ import { RxAvatar } from "react-icons/rx";
 import backgroundImagesg from "./backgroundsg.jpeg";
 import axios from "axios";
 import { server } from "../../server";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
