@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm_arket</title>
+  </head>
+  <body>
+    <h3>Listing details</h3>
+    <ul>
+     
+        <li><a> <%=listing.title %> </a>  </li>
+        <li><a> <%=listing.description %> </a></li>
+
+        <li><a> &#2547; <%=listing.price.toLocaleString("en-BD")%> </a></li>
+        <li><a> <%=listing.location %> </a></li>
+        <li><a> <%=listing.category %> </a></li>
+      </li>
+    </ul>
+    <br />
+    <a href="/listings/<%=listing._id%>/edit">Edit the listing</a>
+    <br><br>
+
+    <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+    <button>Delete this Item</button></form>
+  </body>
+</html>
+    <!--    &#2547; for taka sign -->
