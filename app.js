@@ -5,6 +5,7 @@ const demoListing = require("./models/demoListing.js");
 const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 const MONGO_URL =
   "mongodb+srv://farm-project:Z7Bb54MMOSTeCoDA@cluster0.xe5do.mongodb.net/farm_arket?retryWrites=true&w=majority&appName=Cluster0";
@@ -20,8 +21,9 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
+app.engine("ejs", ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
-
 
 app.get("/", (req, res) => {
   console.log("Hi, I am root");
@@ -98,5 +100,5 @@ app.delete("/listings/:id", async (req, res) => {
 // });
 
 app.listen(8080, () => {
-  console.log("server is running on port 8080");
+  console.log("server is running on port 3000");
 });

@@ -3,8 +3,7 @@ const sampleAgriculturalListings = [
     title: "Fresh Mangoes",
     description:
       "Enjoy the sweet and juicy taste of ripe mangoes, perfect for summer.",
-    image:
-      "https://images.unsplash.com/photo-1590970824475-4cc8488e6a6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuZ29lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    image: "https://pixabay.com/photos/mango-fruit-market-food-8283268/",
     price: 1000, // price per kg in BDT
     location: "Dhaka",
     category: "Fruit",
