@@ -80,22 +80,29 @@ const ProductCard =({data}) => {
             </link>
                   {/*side options*/}
                   <div>
-                    {click ?(
-                        <AiOutlineHeart
+                    {click ? (
+                        <AiFillHeart
                         size={22}
                         className="cursor-pointer absolute right-2 top-5"
-                        onclick={() => setClick(!click)}
+                        onClick={() => removeFromWishlistHandler(data)}
                         color={click ? "red" : "#333"}
-                        title="Add to wishlist"
+                        title="Remove from wishlist"
                         />
                     ) : (
-                        <AiOutlineEye
+                       <AiOutlineHeart
+                       size={22}
+                       className="cursor-pointer absolute right-2 top-5"
+                       onClick={() => addToWishlistHandler(data)}
+                       color={click ? "red" : "#333"}
+                       title="Add to wishlist"
+                       />
+                    )}
+                       <AiOutlineEye
                             size={22}
                             className="cursor-pointer absolute right-2 top-14"
                             onclick={() => setOpen(!open)}
                             color="#333"
-                            title="Quick View" />
-                        )}
+                            title="Quick View"/>
                         <AiOutlineShoppingCart
                         size={25}
                         className="cursor-pointer absolute right-2 top-24"
@@ -104,7 +111,7 @@ const ProductCard =({data}) => {
                         title="Add to cart" />
                         {
                             open ?(
-                                <ProductDetailsCard open={open} setOpen={setOpen} data={data}/>
+                                <ProductDetailsCard setOpen={setOpen} data={data}/>
                             ) : null
                         }
                   </div>
