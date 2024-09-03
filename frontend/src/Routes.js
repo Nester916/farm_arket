@@ -1,8 +1,10 @@
-import Login from "../src/pages/loginpg.jsx";
-import Signup from "../src/pages/signuppg.jsx";
-import Activation from "../src/pages/activationpg.jsx";
+import Login from "../src/pages/loginpg";
+import Signup from "../src/pages/signuppg";
+import Activation from "../src/pages/activationpg";
+import HomePage from "../src/pages/HomePage";
 export{
-    Login,
-    Signup,
-    Activation,
-}
+    LoginPage,
+    SignupPage,
+    ActivationPage,
+    HomePage
+};
