@@ -13,6 +13,17 @@ body {
   background-color: white;
 }
 
+.fa-tractor {
+  font-size: 2rem;
+  color: #fe424d;
+  font-weight: 1000 !important;
+}
+.fa-seedling {
+  font-size: 2rem;
+  color: #fe424d;
+  font-weight: 1000 !important;
+}
+
 .fa-airbnb {
   font-size: 2rem;
   color: #fe424d;

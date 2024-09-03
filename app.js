@@ -100,5 +100,5 @@ app.delete("/listings/:id", async (req, res) => {
 // });
 
 app.listen(8080, () => {
-  console.log("server is running on port 3000");
+  console.log("server is running on port 8080");
 });
