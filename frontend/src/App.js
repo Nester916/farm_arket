@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Signup, Activation, HomePage } from "./Routes.js";
+import { Login, Signup, Activation, Home } from "./Routes.js";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Market from "./redux/market.js";

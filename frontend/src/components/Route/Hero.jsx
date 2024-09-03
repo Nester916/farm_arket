@@ -3,12 +3,12 @@ import styles from "../../../styles/styles";
 
  const Hero = () =>{
     return (
-        <div className={"relative min-h-[70vh] 800px:min-h-[80vh] w- full bg-no-repeat ${styles.normalFlex}:"}
+        <div className={`relative min-h-[70vh] 800px:min-h-[80vh] w- full bg-no-repeat ${styles.normalFlex}:`}
         style ={{
             backgroundImage:"url{please generate a link here naimur}",
         }}
         >
-            <div className={"${styles.section} w-[90%] 800px:w-[60%]"}>
+            <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
                 <h1 className={"text-[35px] leading-[1.2] 800px:[60px] text-[#3d3a3a] font-[600] capitalize"}>
                     Best Collection for <br /> Agriculture 
                 </h1>
@@ -16,7 +16,7 @@ import styles from "../../../styles/styles";
                     Give Some description Naimur
                 </p>
                 <link to ="/products" className="inline-block">
-                  <div className={"${styles.button} mt-5"}>
+                  <div className={`${styles.button} mt-5`}>
                     <span className="text-[#fff] font-[Poppings] text-[18px]">
                         Shop Now
                     </span>
