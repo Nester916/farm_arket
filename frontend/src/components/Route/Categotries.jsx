@@ -1,5 +1,5 @@
 import React from "react"
-import { brandingData} from "../../../static/data";
+import { brandingData,categoriesData } from "../../../static/data";
 import styles from "../../../styles/styles";
 
 const Categories =() =>{
@@ -28,7 +28,7 @@ const Categories =() =>{
                 {
                     categoriesData && categoriesData.map ((i) =>{
                         const handleSubmit =(i) =>{
-                            NavigationPreloadManager("/products/category=${i.title}");
+                            Navigation("/products?category=${i.title}");
                             window.location.reload();
                         }
                         return (
