@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/styles";
 import { categoriesData, productData } from "../../static/data";
@@ -29,13 +29,20 @@ const Header = ({ activeHeading }) => {
     setSearchData(filteredProducts);
   };
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 70) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 70) {
+        setActive(true);
+      } else {
+        setActive(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className={`${styles.section}`}>
       <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
@@ -51,15 +58,15 @@ const Header = ({ activeHeading }) => {
             placeholder="Search Product..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
+            className="h-[40px] w-full px-2 border-[#8DAD60] border-[2px] rounded-md bg-[#F5F5DC]"
           />
           <AiOutlineSearch
             size={30}
-            className="absolute right-2 top-1.5 cursor-pointer"
+            className="absolute right-2 top-1.5 cursor-pointer text-[#6B8E23]"
           />
           {searchData && searchData.length !== 0 ? (
-            <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
-              {searchData && searchData.map((i, index) => {
+            <div className="absolute min-h-[30vh] bg-[#E0E0E0] shadow-sm-2 z-[9] p-4">
+              {searchData.map((i, index) => {
                 const d = i.name;
                 const Product_name = d.replace(/\s+/g, "-");
                 return (
@@ -70,7 +77,7 @@ const Header = ({ activeHeading }) => {
                         alt=""
                         className="w-[40px] h-[40px] mr-[10px]"
                       />
-                      <h1>{i.name}</h1>
+                      <h1 className="text-[#95c439]">{i.name}</h1>
                     </div>
                   </Link>
                 );
@@ -79,10 +86,10 @@ const Header = ({ activeHeading }) => {
           ) : null}
         </div>
 
-        <div className={`${styles.button}`}>
+        <div className="bg-[#82af43] text-[#fff] px-4 py-4 rounded-xl">
           <Link to="/seller">
-            <h1 className="text-[#fff] flex items-center">
-              Become Seller <IoIosArrowForward className="ml-1" />
+            <h1 className="text-[#b8130a] font-bold flex items-center">
+              Become Seller <IoIosArrowForward className="ml-1 text-[#A0522D]" />
             </h1>
           </Link>
         </div>
@@ -91,7 +98,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active ? "shadow-sm fixed top-0 left-0 z-10" : ""
-        } transition hidden 800px:flex items-center justify-between bg-[#3321c8] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between bg-[#3E5F41] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.normalFlex} justify-between`}
@@ -99,13 +106,13 @@ const Header = ({ activeHeading }) => {
           {/* Categories */}
           <div>
             <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
-              <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
-              <button className="h-[100%] w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-[500] select-none rounded-t-md">
+              <BiMenuAltLeft size={30} className="absolute top-3 left-2 text-[#D4A373]" />
+              <button className="h-[100%] w-full flex justify-between items-center pl-10 bg-[#F0F8F0] font-sans text-lg font-[500] select-none rounded-t-md text-[#6B8E23]">
                 All Categories
               </button>
               <IoIosArrowDown
                 size={20}
-                className="absolute right-2 top-4 cursor-pointer"
+                className="absolute right-2 top-4 cursor-pointer text-[#6B8E23]"
                 onClick={() => setDropDown(!dropDown)}
               />
               {dropDown ? (
@@ -126,8 +133,8 @@ const Header = ({ activeHeading }) => {
           <div className="flex">
             <div className={`${styles.normalFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
-                <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 text-white font-mono text-[12px] leading-tight text-center">
+                <AiOutlineHeart size={30} color="#8DAD60" />
+                <span className="absolute right-0 top-0 rounded-full bg-[#A0522D] w-4 h-4 text-white font-mono text-[12px] leading-tight text-center">
                   {/* Number of items in wishlist can be added here */}
                 </span>
               </div>
@@ -137,9 +144,9 @@ const Header = ({ activeHeading }) => {
               <div className="relative cursor-pointer mr-[15px]">
                 <AiOutlineShoppingCart
                   size={30}
-                  color="rgb(255 255 255 / 83%)"
+                  color="#8DAD60"
                 />
-                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 text-white font-mono text-[12px] leading-tight text-center">
+                <span className="absolute right-0 top-0 rounded-full bg-[#A0522D] w-4 h-4 text-white font-mono text-[12px] leading-tight text-center">
                   1
                 </span>
               </div>
@@ -148,7 +155,7 @@ const Header = ({ activeHeading }) => {
             <div className={`${styles.normalFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
                 <Link to="/login">
-                  <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  <CgProfile size={30} color="#8DAD60" />
                 </Link>
               </div>
             </div>
