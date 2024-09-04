@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from "../components/Layout/Header";
+import Header from "../components/Layout/Header.jsx";
 import Hero from "../components/Route/Hero/Hero.jsx";
 import Categories from "../components/Route/Categories/Categotries.jsx"
-import BestDeals from "../components/Route/BestDeals/BestDeals"
-const Home = () => {
+import BestDeals from "../components/Route/BestDeals/BestDeals.jsx"
+const Home1 = () => {
     return (
       <div>
         <Header activeHeading = {1}/>
@@ -13,4 +13,4 @@ const Home = () => {
       </div>
     )
   }
-export default Home
+export default Home1

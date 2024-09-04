@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { server } from "../server";
 
-const Activation = () => {
+const Activation1 = () => {
   const { activation_token } = useParams();
   const [error, setError] = useState(false);
 
@@ -44,4 +44,4 @@ const Activation = () => {
   );
 };
 
-export default Activation;
+export default Activation1;

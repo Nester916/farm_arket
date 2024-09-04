@@ -1,33 +1,31 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/styles";
-import {productData} from "../../static/data";
+import { categoriesData, productData } from "../../static/data";
 import {
-  AioutlineSearch,
+  AiOutlineSearch,
   AiOutlineHeart,
-  AioutlineShoppingCart,
+  AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import DropDown from "./DropDown";
 import Navbar from "./Navbar";
+import { useSelector } from "react-redux";
 import { CgProfile } from "react-icons/cg";
 
 const Header = ({ activeHeading }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchdata, setSearchData] = useState(null);
+  const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
   const [dropDown, setDropDown] = useState(false);
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-
-    const filteredProducts =
-      allProducts &&
-      allProducts.filter((product) =>
-        product.name.toLowerCase().includes(term.toLowerCase())
-      );
+    const filteredProducts = productData.filter((product) =>
+      product.name.toLowerCase().includes(term.toLowerCase())
+    );
     setSearchData(filteredProducts);
   };
 

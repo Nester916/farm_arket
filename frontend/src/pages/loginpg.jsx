@@ -1,9 +1,9 @@
 import React from 'react';
 import Login from "../components/loginpg/loginpg.jsx";
 
-const login = () => {
+const Login1 = () => {
     return(
         <div><Login /></div>
     )
 }
-export default Login
+export default Login1

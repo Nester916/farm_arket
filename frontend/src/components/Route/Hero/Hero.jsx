@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 
  const Hero = () =>{
@@ -15,14 +16,14 @@ import styles from "../../../styles/styles";
                 <p className="pt-5 text-[16px] font-[Poppings] font-[400] text-[#000000ba]">
                     Give Some description Naimur
                 </p>
-                <link to ="/products" className="inline-block">
+                <Link to ="/products" className="inline-block">
                   <div className={`${styles.button} mt-5`}>
                     <span className="text-[#fff] font-[Poppings] text-[18px]">
                         Shop Now
                     </span>
 
                   </div>
-                </link>
+                </Link>
             </div>
         </div>
     )

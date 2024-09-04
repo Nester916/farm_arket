@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Signup, Activation, Home } from "./Routes.js";
+import { Login1, Signup1, Activation1, Home1 } from "./Routes.js";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Market from "./redux/market.js";
 import { loadUser } from "./redux/actions/user";
-
 
 const App = () => {
   useEffect(() => {
@@ -15,9 +14,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/activation/:activation_token" element={<Activation />} />
+        <Route path="/" element={<Home1 />} />
+        <Route path="/login" element={<Login1 />} />
+        <Route path="/signup" element={<Signup1 />} />
+        <Route path="/activation/:activation_token" element={<Activation1 />} />
       </Routes>
       <ToastContainer
         position="bottom-center"
