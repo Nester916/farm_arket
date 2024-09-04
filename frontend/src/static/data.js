@@ -26,8 +26,8 @@ export const navItems = [
 export const brandingData = [
   {
     id: 1,
-    title: "Free Shipping",
-    Description: "On all orders over $100",
+    title: "Free Delivery",
+    Description: "On all orders over BDT3000",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         {/* SVG Path for Free Shipping */}
