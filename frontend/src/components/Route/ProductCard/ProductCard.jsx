@@ -58,7 +58,7 @@ const ProductCard =({data}) => {
                     size={20}
                     />
                     <AiOutlineStar
-                    size={20} 
+                    size={20}
                     className="mr-2 cursor-pointer"
                     color="#f6BA00"
                     />
@@ -69,7 +69,7 @@ const ProductCard =({data}) => {
                         <h5 className={`${styles.productDiscountPrice}`}>
                             {data.price ===0
                             ? data.price : data.discount_price}
-                            $
+                            BDT
                         </h5>
                         <h4 className={`${styles.price}`}>
                                 {data.price ? data.price +"BDT" : null}

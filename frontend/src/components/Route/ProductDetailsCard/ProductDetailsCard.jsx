@@ -38,7 +38,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                 <div className="flex">
                   <img
                     src={data.shop.shop_avatar.url}
-                    alt={`${data.shop.name} avatar`} />
+                    alt={`${data.shop.name} avatar`}
                     className="w-[50px] h-[50px] rounded-full mr-2"
                   />
                   <div>

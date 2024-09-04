@@ -4,9 +4,9 @@ import styles from "../../../styles/styles";
 
  const Hero = () =>{
     return (
-        <div className={`relative min-h-[70vh] 800px:min-h-[80vh] w- full bg-no-repeat ${styles.normalFlex}:`}
+        <div className={`relative min-h-[70vh] 800px:min-h-[80vh] w- full bg-no-repeat ${styles.normalFlex}`}
         style ={{
-            backgroundImage:"url{please generate a link here naimur}",
+            backgroundImage:"url(please generate a link here naimur)"
         }}
         >
             <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
