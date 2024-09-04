@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RxCross1 } from "react-icon/rx";
+import { RxCross1 } from "react-icons/rx";
 import {
   AiFillHeart,
   AiOutlineHeart,

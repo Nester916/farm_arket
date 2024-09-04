@@ -9,10 +9,10 @@ const Navbar =({active}) => {
             {
                 navItems && navItems.map((i,index) => (
                     <div className="flex">
-                        <link to = {i.url}
+                        <Link to = {i.url}
                         className={`${active === index +1 ? 'text-[#17dd1f]' :'text-[#fff]' } font-[500] px-6 cursor-pointer}`}>
                         {i.title}
-                        </link>
+                        </Link>
                     </div>
                 ))
             }
@@ -20,4 +20,4 @@ const Navbar =({active}) => {
     )
 }
         
-    
+export default Navbar
