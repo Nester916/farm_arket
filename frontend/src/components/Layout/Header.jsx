@@ -49,7 +49,7 @@ const Header = ({ activeHeading }) => {
           <input
             type="text"
             placeholder="Search Product..."
-            value={searchData}
+            value={searchTerm}
             onChange={handleSearchChange}
             className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
           />
@@ -59,7 +59,7 @@ const Header = ({ activeHeading }) => {
           />
           {searchData && searchData.length !== 0 ? (
             <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
-              {searchData.map((i, index) => {
+              {searchData && searchData.map((i, index) => {
                 const d = i.name;
                 const Product_name = d.replace(/\s+/g, "-");
                 return (
