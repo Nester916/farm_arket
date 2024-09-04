@@ -34,11 +34,11 @@ const ProductDetailsCard = ({ setOpen, data }) => {
             />
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
-                <img src={data.image_Url[0].url} alt="" />
+                <img src={data.image_Url[0].url} alt={data.name} />
                 <div className="flex">
                   <img
                     src={data.shop.shop_avatar.url}
-                    alt=""
+                    alt={`${data.shop.name} avatar`} />
                     className="w-[50px] h-[50px] rounded-full mr-2"
                   />
                   <div>
@@ -49,7 +49,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.button} bg-[#000] mt-4 rounded-[4px] h-11}`}
+                  className={`${styles.button} bg-[#000] mt-4 rounded-[4px] h-11`}
                   onClick={handleMessageSubmit}
                 >
                   <span className="text-[#fff] flex items-center">
@@ -67,7 +67,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                 <p>{data.description}</p>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
-                    {data.discount_price}$
+                    {data.discount_price}BDT
                   </h4>
                   <h3 className={`${styles.price}`}>
                     {data.price ? data.price + "BDT" : null}
@@ -96,7 +96,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <AiFillHeart
                         size={30}
                         className="cursor-pointer"
-                        onClick={() => removeFromWishlistHandler(data)}
+                        onClick={() => setClick(!click)}
                         color={click ? "red" : "#333"}
                         title="Remove from wishlist"
                       />
@@ -104,7 +104,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <AiOutlineHeart
                         size={30}
                         className="cursor-pointer"
-                        onClick={() => addToWishlistHandler(data)}
+                        onClick={() => setClick(!click)}
                         color={click ? "red" : "#333"}
                         title="Add to wishlist"
                       />
@@ -114,7 +114,7 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                 <div
                   className={`${styles.button} mt-6 rounded-[4px] h-11 flex items-center`}
                 >
-                  <span classname="text-[#fff] flex items-center">
+                  <span className="text-[#fff] flex items-center">
                     Add to Cart <AiOutlineShoppingCart className="ml-1" />
                   </span>
                 </div>

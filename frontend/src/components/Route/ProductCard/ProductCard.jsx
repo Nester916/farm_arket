@@ -10,6 +10,8 @@ import {
   } from "react-icons/ai";
 import styles from "../../../styles/styles";
 import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const ProductCard =({data}) => {
     const [click,setClick] = useState(false);
@@ -25,10 +27,10 @@ const ProductCard =({data}) => {
             </div>
             <Link to={`/product/${product_name}`}>
                <img src={data.image_Url[0].url} alt=''
-                classname="w-full h-[170px] object-contain"></img>
+                className="w-full h-[170px] object-contain"></img>
             </Link>
             <Link to='/'>
-              <h5 classname={`${styles.shop_name}`}> {data.shop.name}</h5>
+              <h5 className={`${styles.shop_name}`}> {data.shop.name}</h5>
             </Link>
             <Link to={`/product/${product_name}`}>
                   <h4 className="pb-3 font-[500]">
@@ -84,7 +86,7 @@ const ProductCard =({data}) => {
                         <AiFillHeart
                         size={22}
                         className="cursor-pointer absolute right-2 top-5"
-                        onClick={() => removeFromWishlistHandler(data)}
+                        onClick={() => setClick(!click)}
                         color={click ? "red" : "#333"}
                         title="Remove from wishlist"
                         />
@@ -92,7 +94,7 @@ const ProductCard =({data}) => {
                        <AiOutlineHeart
                        size={22}
                        className="cursor-pointer absolute right-2 top-5"
-                       onClick={() => addToWishlistHandler(data)}
+                       onClick={() => setClick(!click)}
                        color={click ? "red" : "#333"}
                        title="Add to wishlist"
                        />
@@ -100,13 +102,13 @@ const ProductCard =({data}) => {
                        <AiOutlineEye
                             size={22}
                             className="cursor-pointer absolute right-2 top-14"
-                            onclick={() => setOpen(!open)}
+                            onClick={() => setOpen(!open)}
                             color="#333"
                             title="Quick View"/>
                         <AiOutlineShoppingCart
                         size={25}
                         className="cursor-pointer absolute right-2 top-24"
-                        onClick={() => addToCartHandler(data._id)}
+                        onClick={() => setOpen(!open)}
                         color="#444"
                         title="Add to cart" />
                         {
