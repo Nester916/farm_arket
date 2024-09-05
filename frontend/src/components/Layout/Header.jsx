@@ -13,6 +13,7 @@ import DropDown from "./DropDown";
 import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
 import { CgProfile } from "react-icons/cg";
+import logo from "./logo.jpg";
 
 const Header = ({ activeHeading }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,13 +44,27 @@ const Header = ({ activeHeading }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
+return (
+  <>
     <div className={`${styles.section}`}>
       <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
-            <img src="please fill this naimur" alt="Logo" />
+            <img
+              src={logo}
+              alt="Logo"
+              style={{
+                width: "70px",
+                height: "70px",
+                borderRadius: "50%",
+              }}
+            />
           </Link>
+          <span
+            style={{ marginLeft: "10px", fontWeight: "bold", fontSize: "35px" }}
+          >
+            <div className="font-Caveat font-extrabold">Far-Market</div>
+          </span>
         </div>
         {/* Search box */}
         <div className="w-[50%] relative">
@@ -89,24 +104,26 @@ const Header = ({ activeHeading }) => {
         <div className="bg-[#82af43] text-[#fff] px-4 py-4 rounded-xl">
           <Link to="/seller">
             <h1 className="text-[#b8130a] font-bold flex items-center">
-              Become Seller <IoIosArrowForward className="ml-1 text-[#A0522D]" />
+              Become Seller{" "}
+              <IoIosArrowForward className="ml-1 text-[#A0522D]" />
             </h1>
           </Link>
         </div>
       </div>
-
-      <div
+    </div>
+    <div
         className={`${
           active ? "shadow-sm fixed top-0 left-0 z-10" : ""
-        } transition hidden 800px:flex items-center justify-between bg-[#3E5F41] h-[70px]`}
-      >
+        } transition hidden 800px:flex items-center justify-between bg-[#3E5F41] h-[70px]`}>
         <div
-          className={`${styles.section} relative ${styles.normalFlex} justify-between`}
-        >
+          className={`${styles.section} relative ${styles.normalFlex} justify-between`}>
           {/* Categories */}
           <div>
             <div className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block">
-              <BiMenuAltLeft size={30} className="absolute top-3 left-2 text-[#D4A373]" />
+              <BiMenuAltLeft
+                size={30}
+                className="absolute top-3 left-2 text-[#D4A373]"
+              />
               <button className="h-[100%] w-full flex justify-between items-center pl-10 bg-[#F0F8F0] font-sans text-lg font-[500] select-none rounded-t-md text-[#6B8E23]">
                 All Categories
               </button>
@@ -142,10 +159,7 @@ const Header = ({ activeHeading }) => {
 
             <div className={`${styles.normalFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
-                <AiOutlineShoppingCart
-                  size={30}
-                  color="#8DAD60"
-                />
+                <AiOutlineShoppingCart size={30} color="#8DAD60" />
                 <span className="absolute right-0 top-0 rounded-full bg-[#A0522D] w-4 h-4 text-white font-mono text-[12px] leading-tight text-center">
                   1
                 </span>
@@ -162,7 +176,7 @@ const Header = ({ activeHeading }) => {
           </div>
         </div>
       </div>
-    </div>
+  </>
   );
 };
 
