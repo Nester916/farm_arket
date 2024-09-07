@@ -7,7 +7,7 @@ const ErrorHandler = require("../utils/errorhandler");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendmail");
-const catchAsyncErrors = require("../middleware/catchasyncerrors");
+const catchAsyncErrors = require("../middleware/catchAsyncerrors");
 const sendToken = require("../utils/jwttoken");
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
 
