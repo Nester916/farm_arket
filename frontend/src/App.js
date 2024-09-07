@@ -5,11 +5,12 @@ import { Login1, Signup1, Activation1, Home1 } from "./Routes.js";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Market from "./redux/market.js";
-import { loadUser } from "./redux/actions/user";
+import { loadSeller, loadUser } from "./redux/actions/user";
 
 const App = () => {
   useEffect(() => {
     Market.dispatch(loadUser());
+    Market.dispatch(loadSeller());
   }, []);
   return (
     <BrowserRouter>
