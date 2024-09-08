@@ -29,7 +29,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
               }}
               alt=""
             />
-            <h3 className="m-3 curson-pointer">{i.title}</h3>
+            <h3 className="m-3 curson-pointer select-none">{i.title}</h3>
           </div>
         ))}
     </div>
