@@ -112,11 +112,11 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          <div className="bg-[#82af43] text-[#fff] px-4 py-4 rounded-xl">
+          <div className="bg-[#82af43] text-[#fff] px-2 py-3 rounded-xl items-center">
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
               <h1 className="text-[#b8130a] font-bold flex items-center">
                 {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
-                <IoIosArrowForward className="ml-1 text-[#A0522D]" />
+                <IoIosArrowForward className=" text-[#A0522D]" />
               </h1>
             </Link>
           </div>
@@ -331,7 +331,7 @@ const Header = ({ activeHeading }) => {
               </div>
 
               <Navbar active={activeHeading} />
-              <div className="bg-[#82af43] text-[#fff] px-4 py-4 rounded-xl ml-4 !rounded-[4px]">
+              <div className="bg-[#82af43] text-[#fff] px-4 py-4 ml-4 rounded-xl">
                 <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
                   <h1 className="text-[#b8130a] font-bold flex items-center">
                     {isSeller ? "Go Dashboard" : "Become Seller"}{" "}
