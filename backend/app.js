@@ -5,9 +5,16 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+//app.use(cors({
+  //origin: ['https://localhost:3000',],
+  //credentials: true
+//}));
+
 app.use(cors({
-  origin: ['https://eshop-tutorial-pyri.vercel.app',],
-  credentials: true
+  origin: 'http://localhost:3000',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  headers: ['Content-Type', 'Accept', 'Origin', 'X-Requested-With']
 }));
 
 app.use(express.json());
@@ -21,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({
-    path: "config/.env",
+    path: "./backend/config/.env",
   });
 }
 
