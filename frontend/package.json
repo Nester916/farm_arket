@@ -6,6 +6,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.0.2",
+    "@mui/styled-engine-sc": "^6.0.2",
     "@mui/x-data-grid": "^7.16.0",
     "@reduxjs/toolkit": "^2.2.7",
     "@stripe/react-stripe-js": "^2.8.0",
@@ -23,6 +24,7 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1",
     "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.13",
     "timeago.js": "^4.0.2",
     "toastify": "^2.0.1",
     "web-vitals": "^2.1.4"
