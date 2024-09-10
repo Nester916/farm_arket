@@ -8,7 +8,7 @@ const { isAuthenticated, isSeller, isAdmin } = require("../middleware/auth");
 const cloudinary = require("cloudinary");
 const catchAsyncErrors = require("../middleware/catchAsyncerrors");
 const ErrorHandler = require("../utils/errorhandler");
-const sendShopToken = require("../utils/shopToken");
+const sendShopToken = require("../utils/shopToken.js");
 
 // create shop
 router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
