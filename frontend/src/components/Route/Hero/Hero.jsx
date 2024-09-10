@@ -14,7 +14,7 @@ import styles from "../../../styles/styles";
                     Best Collection for <br /> Agriculture 
                 </h1>
                 <p className="pt-5 text-[16px] font-[Poppings] font-[400] text-[#000000ba]">
-                    Give Some description Naimur
+                Welcome to Nester Farm_arket, your online gateway to fresh, local farm produce! We connect you directly with local farmers and artisans, offering a wide range of seasonal fruits, vegetables, and specialty items delivered right to your door. Explore our user-friendly platform to find high-quality, sustainably grown products and enjoy farm-to-table freshness without leaving home. Whether you're looking for everyday staples or unique, artisanal goods, we make it easy to support local agriculture and eat well. Join our community and experience the best of farm-fresh convenience today!
                 </p>
                 <Link to ="/products" className="inline-block">
                   <div className={`${styles.button} mt-5`}>
