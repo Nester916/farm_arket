@@ -47,40 +47,26 @@ import { getAllProducts } from "./redux/actions/product";
 import { getAllEvents } from "./redux/actions/event";
 import axios from "axios";
 import { server } from "./server";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+//import { Elements } from "@stripe/react-stripe-js";
+//import { loadStripe } from "@stripe/stripe-js";
 
 const App = () => {
-  const [stripeApikey, setStripeApiKey] = useState("");
+  //const [stripeApikey, setStripeApiKey] = useState("");
 
-  async function getStripeApikey() {
-    const { data } = await axios.get(`${server}/payment/stripeapikey`);
-    setStripeApiKey(data.stripeApikey);
-  }
+  //async function getStripeApikey() {
+    //const { data } = await axios.get(`${server}/payment/stripeapikey`);
+    //setStripeApiKey(data.stripeApikey);
+  //}
   useEffect(() => {
     Market.dispatch(loadUser());
     Market.dispatch(loadSeller());
     Market.dispatch(getAllProducts());
     Market.dispatch(getAllEvents());
-    getStripeApikey();
+    //getStripeApikey();
   }, []);
 
   return (
     <BrowserRouter>
-      {stripeApikey && (
-        <Elements stripe={loadStripe(stripeApikey)}>
-          <Routes>
-            <Route
-              path="/payment"
-              element={
-                <ProtectedRoute>
-                  <PaymentPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </Elements>
-      )}
       <Routes>
         <Route path="/" element={<Home1 />} />
         <Route path="/login" element={<Login1 />} />
