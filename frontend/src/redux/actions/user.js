@@ -30,7 +30,9 @@ export const loadSeller = () => async (dispatch) => {
     });
     const { data } = await axios.get(`${server}/shop/getSeller`, {
       withCredentials: true,
-    });
+      headers: {
+        "Access-Control-Allow-Credentials": true,
+    }});
     dispatch({
       type: "LoadSellerSuccess",
       payload: data.seller,
