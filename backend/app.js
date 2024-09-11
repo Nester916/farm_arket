@@ -19,8 +19,10 @@ app.use("/test", (req, res) => {
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 // config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-    path: "./backend/config/.env",  });
+if (process.env.NODE_env !== "PRODUCTION") {
+  require("dotenv").config({
+    path: "backend/config/.env",
+  });
 }
 
 // import routes
