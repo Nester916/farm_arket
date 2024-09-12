@@ -1,3 +1,13 @@
+import vegetable from "./vegetable.png";
+import dairy from "./dairy.png";
+import fruit from "./fruit.png";
+import gardening from "./gardening.png";
+import seed from "./seed.png";
+import tractor from "./tractor.png";
+import duck from  "./duck.png";
+import leaf from "./leaf.png";
+import rice from "./rice.png";
+import wheelbarrow from "./wheelbarrow.png";
 // navigation Data
 export const navItems = [
   {
@@ -72,61 +82,61 @@ export const categoriesData = [
     id: 1,
     title: "Vegetables",
     subTitle: "",
-    image_Url: "https://example.com/images/vegetables.jpg",
+    image_Url: `url(${vegetable})`,
   },
   {
     id: 2,
     title: "Fruits",
     subTitle: "",
-    image_Url: "https://example.com/images/fruits.jpg",
+    image_Url: `url(${fruit})`,
   },
   {
     id: 3,
     title: "Dairy Products",
     subTitle: "",
-    image_Url: "https://example.com/images/dairy.jpg",
+    image_Url: `url(${dairy})`,
   },
   {
     id: 4,
     title: "Meat & Poultry",
     subTitle: "",
-    image_Url: "https://example.com/images/meat.jpg",
+    image_Url: `url(${duck})`,
   },
   {
     id: 5,
     title: "Grains",
     subTitle: "",
-    image_Url: "https://example.com/images/grains.jpg",
+    image_Url: `url(${rice})`,
   },
   {
     id: 6,
     title: "Organic Products",
     subTitle: "",
-    image_Url: "https://example.com/images/organic.jpg",
+    image_Url: `url(${leaf})`,
   },
   {
     id: 7,
     title: "Farm Equipment",
     subTitle: "",
-    image_Url: "https://example.com/images/farm-equipment.jpg",
+    image_Url:`url(${wheelbarrow})`,
   },
   {
     id: 8,
     title: "Gardening Supplies",
     subTitle: "",
-    image_Url: "https://example.com/images/gardening.jpg",
+    image_Url: `url(${gardening})`,
   },
   {
     id: 9,
     title: "Seeds & Fertilizers",
     subTitle: "",
-    image_Url: "https://example.com/images/seeds.jpg",
+    image_Url: `url(${seed})`,
   },
   {
     id: 10,
     title: "Others",
     subTitle: "",
-    image_Url: "https://example.com/images/others.jpg",
+    image_Url: `url(${tractor})`,
   },
 ];
   
