@@ -8,6 +8,10 @@ import duck from  "./duck.png";
 import leaf from "./leaf.png";
 import rice from "./rice.png";
 import wheelbarrow from "./wheelbarrow.png";
+import freeDeliveryIcon from './free-delivery-free-svgrepo-com.svg';
+import dollar from './dollar-minimalistic-svgrepo-com.svg';
+import fresh from './fresh-produce-delivery-truck-svgrepo-com.svg';
+import securepay from './secure-payment-svgrepo-com.svg';
 // navigation Data
 export const navItems = [
   {
@@ -38,41 +42,25 @@ export const brandingData = [
     id: 1,
     title: "Free Delivery",
     Description: "On all orders over BDT3000",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        {/* SVG Path for Free Shipping */}
-      </svg>
-    ),
+    icon: <img src={freeDeliveryIcon} alt="Free Delivery Icon" width="36" height="36" />,
   },
   {
     id: 2,
     title: "Fresh Produce",
     Description: "Locally sourced and farm-fresh",
-    icon: (
-      <svg width="32" height="34" viewBox="0 0 32 34" fill="none">
-        {/* SVG Path for Fresh Produce */}
-      </svg>
-    ),
+    icon: <img src={fresh} alt="Free Delivery Icon" width="36" height="36" />,
   },
   {
     id: 3,
     title: "Affordable Prices",
     Description: "Direct from farm to table",
-    icon: (
-      <svg width="32" height="35" viewBox="0 0 32 35" fill="none">
-        {/* SVG Path for Affordable Prices */}
-      </svg>
-    ),
+    icon: <img src={dollar} alt="Free Delivery Icon" width="36" height="36" />,
   },
   {
     id: 4,
     title: "Secure Payments",
     Description: "100% protected payments",
-    icon: (
-      <svg width="32" height="38" viewBox="0 0 32 38" fill="none">
-        {/* SVG Path for Secure Payments */}
-      </svg>
-    ),
+    icon: <img src={securepay} alt="Free Delivery Icon" width="36" height="36" />,
   },
 ];
 
@@ -166,8 +154,8 @@ export const categoriesData = [
             },
             ratings: 4.6,
         },
-        price: 2.99,
-        discount_price: 2.49,
+        price: 299,
+        discount_price: 249,
         rating: 4.5,
         total_sell: 100,
         stock: 60,
@@ -196,8 +184,8 @@ export const categoriesData = [
             },
             ratings: 4.7,
         },
-        price: 1.99,
-        discount_price: 1.79,
+        price: 199,
+        discount_price: 179,
         rating: 4.8,
         total_sell: 220,
         stock: 80,
@@ -226,8 +214,8 @@ export const categoriesData = [
             },
             ratings: 4.9,
         },
-        price: 3.49,
-        discount_price: 2.99,
+        price: 349,
+        discount_price: 299,
         rating: 4.8,
         total_sell: 180,
         stock: 45,
@@ -256,8 +244,8 @@ export const categoriesData = [
             },
             ratings: 4.9,
         },
-        price: 12.99,
-        discount_price: 11.99,
+        price: 1299,
+        discount_price: 1199,
         rating: 4.8,
         total_sell: 140,
         stock: 35,
@@ -286,8 +274,8 @@ export const categoriesData = [
             },
             ratings: 4.7,
         },
-        price: 2.99,
-        discount_price: 2.59,
+        price: 299,
+        discount_price: 259,
         rating: 4.6,
         total_sell: 160,
         stock: 50,
@@ -316,8 +304,8 @@ export const categoriesData = [
             },
             ratings: 4.8,
         },
-        price: 3.99,
-        discount_price: 3.49,
+        price: 399,
+        discount_price: 349,
         rating: 4.7,
         total_sell: 190,
         stock: 55,
