@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\AdminController;
+
 route::get('/', [HomeController::class, 'home']);
 
 Route::get('/dashboard', function () {
@@ -20,3 +22,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth', 'admin']);
+
+route::get('view_category',[AdminController::class,'view_category'])->middleware(['auth', 'admin']);
+
+route::post('add_category',[AdminController::class,'add_category'])->middleware(['auth', 'admin']);
