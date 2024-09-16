@@ -1,1 +1,2 @@
+route::get("/dashboard", function() {return view("home.index");}) ->middleware(["auth","verified"])->name("dashboard");
 route::get("product_search",[AdminController::class,'product_search'])->middleware(["auth","admin"]);
