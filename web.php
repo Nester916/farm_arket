@@ -1,0 +1,1 @@
+route::get("product_search",[AdminController::class,'product_search'])->middleware(["auth","admin"]);
