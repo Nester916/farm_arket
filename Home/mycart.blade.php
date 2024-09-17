@@ -29,6 +29,12 @@
         {
             border:1px solid skyblue;
         }
+        .cart_value 
+        {
+            text-align:center;
+            margin-bottom:70px;
+            padding:18px;
+        }
     </style>
 </head>
 <body>
@@ -39,9 +45,14 @@
     <table>
         <tr>
             <th>Product Title</th>
-            <th>price</th>
-            <th>image</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Remove</th>
         </tr>
+        <?php
+        $value =0;
+
+        ?>
         @foreach($cart as $cart)
         <tr>
             <td>{{$cart->product->title}}</td>
@@ -49,10 +60,19 @@
             <td>
                 <img width = "150" src="/products/{{$cart->product->image}}">
             </td>
+            <td>
+                <a class="btn btn-danger" href="{{url('delete cart',$cart->id)}}">Remove</a>
+            </td>
         </tr>
+        <?php
+        $value =$value + $cart->product->price;
+        ?>
         @endforeach
     </table>
 </div>
+    <div class="cart_value">
+        <h3>Total value of cart is: ${{$value}}</h3>
+    </div>
 @include("home.footer")
 </body>
 </html>
