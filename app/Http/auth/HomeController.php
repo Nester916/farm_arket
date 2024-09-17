@@ -5,6 +5,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Order;
 class HomeController extends HomeController
 {
     public function index()
@@ -82,5 +83,31 @@ class HomeController extends HomeController
             $cart = Cart::where("user_id",$userid)->get();
         }
         return view("home.mycart",compact("count","cart"));
+    }
+    public function confirm_order(Request $request)
+    {
+        $name = $request->name;
+        $address = $request->address;
+        $phone = $request->phone;
+        $userid = Auth::user()->id;
+        $cart = Cart::where('user_id',$userid->get());
+        foreach($cart as $carts)
+        {
+            $order =new Order;
+            $order->name= $name;
+            $order->rec_address= $address;
+            $order->phone= $phone;
+            $order->user_id =$user_id;
+            $order->product_id = $carts ->product_id;
+            $order->save()
+        }
+        $cart_remove = Cart::where("user_id",$userid)->get();
+        foreach($cart_remove as $remove)
+        {
+            $data = Cart::find($remove->id);
+            $data-> delete();
+        }
+        toastr()->timeOut(10000)->closeButton()->addSuccess("Product ordered Successfully");
+        return redirect()->back();
     }
 }
