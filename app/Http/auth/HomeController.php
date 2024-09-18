@@ -19,7 +19,7 @@ class HomeController extends HomeController
         if(Auth::id())
         {
             $user = Auth::user();
-            $userid = $user->id
+            $userid = $user->id;
             $count = Cart::where("user_id",$user_id)->count();
         }
         else
@@ -36,7 +36,7 @@ class HomeController extends HomeController
         if(Auth::id())
         {
             $user = Auth::user();
-            $userid = $user->id
+            $userid = $user->id;
             $count = Cart::where("user_id",$user_id)->count();
         }
         else
@@ -52,7 +52,7 @@ class HomeController extends HomeController
         if(Auth::id())
         {
             $user = Auth::user();
-            $userid = $user->id
+            $userid = $user->id;
             $count = Cart::where("user_id",$user_id)->count();
         }
         else
@@ -99,7 +99,7 @@ class HomeController extends HomeController
             $order->phone= $phone;
             $order->user_id =$user_id;
             $order->product_id = $carts ->product_id;
-            $order->save()
+            $order->save();
         }
         $cart_remove = Cart::where("user_id",$userid)->get();
         foreach($cart_remove as $remove)
