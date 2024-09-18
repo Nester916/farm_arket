@@ -47,6 +47,7 @@
                         <th> Price</th>
                         <th> Image</th>
                         <th> status</th>
+                        <th> Change status</th>
                     </tr>
                     @foreach($data as $data)
                     <tr>
@@ -59,7 +60,19 @@
                         <td>
                             <img width='150'src="products/{{$data->product->image}}">
                         </td>
-                        <td>{{$data->status}}</td>
+                        <td>
+                            @if($data->status=="in progress")
+                            <span style="color:red">{{$data->status}}</span>
+                            @elseif($data->status=="On the way")
+                            <span style="color:skyblue">{{$data->status}}</span>
+                            @else
+                            <span style="color:yellow">{{$data->status}}</span>
+                            @endif
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="{{url('on_the_way',$data->id)}}">On the way</a>
+                            <a class="btn btn-success" href="{{url('Delivered',$data->id)}}">Delivered</a>
+                        </td>
                     </tr>
                     @endforeach
                 </table>
