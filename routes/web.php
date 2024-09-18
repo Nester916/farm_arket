@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('admin/dashboard',[HomeController::class,'index']);
+route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
 route::get("/",[HomeController::class,'home']);
 route::get("/dashboard",[HomeController::class,'login_home'])->middleware(["auth","verified"])->name("dashboard");
 route::get("product_search",[AdminController::class,'product_search'])->middleware(["auth","admin"]);
