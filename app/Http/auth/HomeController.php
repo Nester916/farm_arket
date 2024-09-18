@@ -114,4 +114,11 @@ class HomeController extends HomeController
         toastr()->timeOut(10000)->closeButton()->addSuccess("Product ordered Successfully");
         return redirect()->back();
     }
+    public function myorders()
+    {
+        $user = Auth::user()->id;
+        $count = Order::where('user_id',$user)->get()->count();
+        $order = Order::where('user_id',$user)->get();
+        return view('home.order',compact('count','order'));
+    }
 }
