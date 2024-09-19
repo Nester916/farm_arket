@@ -20,17 +20,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="why.html">
+              <a class="nav-link" href="{{url('why')}}">
                 FAQ
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
+              <a class="nav-link" href="http://192.168.80.44:8501/">
+                Leaf Detection
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('contact')}}">Contact Us</a>
             </li>
           </ul>
           <div class="user_option">

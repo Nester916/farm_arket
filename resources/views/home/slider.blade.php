@@ -14,14 +14,14 @@
                       <p>
                         Discover fresh, locally-sourced produce and agricultural products. From farm to your doorstep, supporting local farmers and sustainable farming practices.
                       </p>
-                      <a href="contact.html">
+                      <a href="{{url('contact')}}">
                         Contact Us
                       </a>
                     </div>
                   </div>
                   <div class="col-md-5">
                     <div class="img-box">
-                      <img style="width:600px" src="images/farm_banner.jpg" alt="Agriculture Products" />
+                      <img style="width:600px" src="images/image3.jpeg" alt="Agriculture Products" />
                     </div>
                   </div>
                 </div>
