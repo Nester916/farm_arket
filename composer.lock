@@ -2621,16 +2621,16 @@
         },
         {
             "name": "php-flasher/flasher",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher.git",
-                "reference": "db6cf7746bc6d55f36df144c00de81d881b2ca02"
+                "reference": "6a7f90451281c2858af970dc32301193964f4ee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/db6cf7746bc6d55f36df144c00de81d881b2ca02",
-                "reference": "db6cf7746bc6d55f36df144c00de81d881b2ca02",
+                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/6a7f90451281c2858af970dc32301193964f4ee8",
+                "reference": "6a7f90451281c2858af970dc32301193964f4ee8",
                 "shasum": ""
             },
             "require": {
@@ -2701,20 +2701,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:29:54+00:00"
+            "time": "2024-09-19T06:40:10+00:00"
         },
         {
             "name": "php-flasher/flasher-laravel",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-laravel.git",
-                "reference": "2bf507c93d071be1850b6fd482ca990c73f0c1fb"
+                "reference": "275606011a0377a1fa15c6c3f3447a17336db3ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/2bf507c93d071be1850b6fd482ca990c73f0c1fb",
-                "reference": "2bf507c93d071be1850b6fd482ca990c73f0c1fb",
+                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/275606011a0377a1fa15c6c3f3447a17336db3ea",
+                "reference": "275606011a0377a1fa15c6c3f3447a17336db3ea",
                 "shasum": ""
             },
             "require": {
@@ -2791,20 +2791,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:51:41+00:00"
+            "time": "2024-09-19T06:32:04+00:00"
         },
         {
             "name": "php-flasher/flasher-symfony",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-symfony.git",
-                "reference": "7318adcc57b8bab219e153eeeca2f4936ef037e5"
+                "reference": "6a438030381bc391103ff24ed6c7b906e44a660a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-symfony/zipball/7318adcc57b8bab219e153eeeca2f4936ef037e5",
-                "reference": "7318adcc57b8bab219e153eeeca2f4936ef037e5",
+                "url": "https://api.github.com/repos/php-flasher/flasher-symfony/zipball/6a438030381bc391103ff24ed6c7b906e44a660a",
+                "reference": "6a438030381bc391103ff24ed6c7b906e44a660a",
                 "shasum": ""
             },
             "require": {
@@ -2873,20 +2873,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:51:41+00:00"
+            "time": "2024-09-19T05:42:10+00:00"
         },
         {
             "name": "php-flasher/flasher-toastr",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-toastr.git",
-                "reference": "5d207334de89bc2925eea43c58669c1788ff9ef6"
+                "reference": "6b3ec6eba0c5b18a1aad12a4204a05cc2f8f9e1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-toastr/zipball/5d207334de89bc2925eea43c58669c1788ff9ef6",
-                "reference": "5d207334de89bc2925eea43c58669c1788ff9ef6",
+                "url": "https://api.github.com/repos/php-flasher/flasher-toastr/zipball/6b3ec6eba0c5b18a1aad12a4204a05cc2f8f9e1f",
+                "reference": "6b3ec6eba0c5b18a1aad12a4204a05cc2f8f9e1f",
                 "shasum": ""
             },
             "require": {
@@ -2956,20 +2956,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:51:41+00:00"
+            "time": "2024-09-19T06:39:03+00:00"
         },
         {
             "name": "php-flasher/flasher-toastr-laravel",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-toastr-laravel.git",
-                "reference": "74199071fde30738d840dbd8757f5d957d23846d"
+                "reference": "330c3e29bf11b5d4bf033dbb327cfece4d74ef1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-toastr-laravel/zipball/74199071fde30738d840dbd8757f5d957d23846d",
-                "reference": "74199071fde30738d840dbd8757f5d957d23846d",
+                "url": "https://api.github.com/repos/php-flasher/flasher-toastr-laravel/zipball/330c3e29bf11b5d4bf033dbb327cfece4d74ef1a",
+                "reference": "330c3e29bf11b5d4bf033dbb327cfece4d74ef1a",
                 "shasum": ""
             },
             "require": {
@@ -3042,20 +3042,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:51:41+00:00"
+            "time": "2024-09-19T06:32:04+00:00"
         },
         {
             "name": "php-flasher/flasher-toastr-symfony",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-toastr-symfony.git",
-                "reference": "81de0e51a5a9e6e4f821c874fd15152d1bcdac0a"
+                "reference": "7d44e9ac550cb0f2aa349c16699c6fbb4c522fa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-toastr-symfony/zipball/81de0e51a5a9e6e4f821c874fd15152d1bcdac0a",
-                "reference": "81de0e51a5a9e6e4f821c874fd15152d1bcdac0a",
+                "url": "https://api.github.com/repos/php-flasher/flasher-toastr-symfony/zipball/7d44e9ac550cb0f2aa349c16699c6fbb4c522fa0",
+                "reference": "7d44e9ac550cb0f2aa349c16699c6fbb4c522fa0",
                 "shasum": ""
             },
             "require": {
@@ -3118,7 +3118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-05-23T09:51:41+00:00"
+            "time": "2024-05-26T23:40:47+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9678,28 +9678,28 @@
         },
         {
             "name": "sebastian/type",
-            "version": "5.0.1",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "fb6a6566f9589e86661291d13eba708cce5eb4aa"
+                "reference": "461b9c5da241511a2a0e8f240814fb23ce5c0aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/fb6a6566f9589e86661291d13eba708cce5eb4aa",
-                "reference": "fb6a6566f9589e86661291d13eba708cce5eb4aa",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/461b9c5da241511a2a0e8f240814fb23ce5c0aac",
+                "reference": "461b9c5da241511a2a0e8f240814fb23ce5c0aac",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^11.0"
+                "phpunit/phpunit": "^11.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "5.0-dev"
+                    "dev-main": "5.1-dev"
                 }
             },
             "autoload": {
@@ -9723,7 +9723,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
                 "security": "https://github.com/sebastianbergmann/type/security/policy",
-                "source": "https://github.com/sebastianbergmann/type/tree/5.0.1"
+                "source": "https://github.com/sebastianbergmann/type/tree/5.1.0"
             },
             "funding": [
                 {
@@ -9731,7 +9731,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-03T05:11:49+00:00"
+            "time": "2024-09-17T13:12:04+00:00"
         },
         {
             "name": "sebastian/version",
