@@ -72,7 +72,7 @@
                   @elseif($data->status == 'On the way')
                   <span style="color:skyblue;">{{$data->status}}</span>
                   @else
-                  <span style="color:yellow;">{{$data->status}}</span>
+                  <span style="color:rgb(101, 206, 9);">{{$data->status}}</span>
                   @endif
                </td>
                <td>

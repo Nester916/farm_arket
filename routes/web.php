@@ -59,3 +59,23 @@ route::post('comfirm_order',[HomeController::class,'comfirm_order'])->middleware
 
 route::get('view_orders',[AdminController::class,'view_order'])->middleware(['auth','admin']);
 
+route::get('on_the_way/{id}',[AdminController::class,'on_the_way'])->middleware(['auth','admin']);
+
+route::get('delivered/{id}',[AdminController::class,'delivered'])->middleware(['auth','admin']);
+
+route::get('print_pdf/{id}',[AdminController::class,'print_pdf'])->middleware(['auth','admin']);
+
+route::get('/myorders',[HomeController::class,'myorders'])->middleware(['auth', 'verified']);
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('stripe/{value}', 'stripe');
+    Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
+});
+
+route::get('shop',[HomeController::class,'shop']);
+
+route::get('why',[HomeController::class,'why']);
+
+route::get('testimonial',[HomeController::class,'testimonial']);
+
+route::get('contact',[HomeController::class,'contact']);
