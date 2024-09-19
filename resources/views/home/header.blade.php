@@ -25,7 +25,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://192.168.80.44:8501/">
+              <a class="nav-link" href="http://192.168.198.44:8502/">
                 Leaf Detection
               </a>
             </li>
